@@ -13,13 +13,13 @@ wp.blocks.registerBlockType('jhdc/gists', {
   {
     /**
      * On Update of Code Element
-     * @param event
+     * @param code
      */
-    function updateContent(event)
+    function updateCode(code)
     {
-      console.log(event);
+      console.log(code);
 
-      props.setAttributes({ code: event.target.value })
+      props.setAttributes({ code: code })
     }
 
     return wp.element.createElement(
@@ -31,8 +31,8 @@ wp.blocks.registerBlockType('jhdc/gists', {
       wp.element.createElement(wp.components.TextControl, {
         id      : "jhdc-gists-code",
         value   : props.attributes.code,
-        onChange: updateContent
-      }),
+        onChange: updateCode
+      })
     )
   },
   save      : function (props)
