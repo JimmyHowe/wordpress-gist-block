@@ -11,20 +11,29 @@ wp.blocks.registerBlockType('jhdc/gists', {
   },
   edit      : function (props)
   {
+    /**
+     * On Update of Code Element
+     * @param event
+     */
     function updateContent(event)
     {
       console.log(event);
 
-      return props.setAttributes({ code: event.target.value })
+      props.setAttributes({ code: event.target.value })
     }
 
-    return wp.element.createElement("div", null, wp.element.createElement("label", {
-      for: "jhdc-gists-code"
-    }), wp.element.createElement("input", {
-      id      : "jhdc-gists-code",
-      value   : props.attributes.code,
-      onChange: updateContent
-    }));
+    return wp.element.createElement(
+      "div",
+      null,
+      wp.element.createElement("label", {
+        for: "jhdc-gists-code"
+      }),
+      wp.element.createElement(wp.components.TextControl, {
+        id      : "jhdc-gists-code",
+        value   : props.attributes.code,
+        onChange: updateContent
+      }),
+    )
   },
   save      : function (props)
   {
