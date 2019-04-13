@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f2a7b3c0-37e2-4621-ae6a-c5b24db4b5e9" name="WP51">
+        <fileTransfer port="0" mountedRoot="P:\Code\WordPress\5.1" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
